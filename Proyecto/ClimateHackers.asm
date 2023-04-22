@@ -89,6 +89,15 @@ include MACROS.lib
         espacio db '                                        '
         msjOpc db 'Opci',162,'n: '
         
+        ;Zonas
+        
+        zonaMorelos db 'MORELOS';7
+        zonaSauces db 'SAUCES';6
+        zonaCentro db 'CENTRO';5
+        zonaCantera db 'CANTERA';7
+        zonaLaguna db 'LAGUNA';6
+        zonaZapopan db 'ZAPOPAN';
+        
 
 ;-------------------------------SECCIÓN DE MACROS------------------------------
 
@@ -139,7 +148,15 @@ CAR_COLOR ENDM
     MOV BH,pagina
     MOV AL,modo
     INT 10H   
- IMP_CAD_COLOR ENDM
+ IMP_CAD_COLOR ENDM  
+  
+  CURSOR MACRO REN,COL,PAG
+          MOV AH,2
+          MOV DH,REN
+          MOV DL,COL
+          MOV BH,PAG
+          INT 10H
+   CURSOR ENDM
               
 
 
@@ -442,6 +459,14 @@ pintarInterfaz:
             INC REN
             interfazMenu r16,ren 
 
+ 
+IMP_CAD_COLOR zonaMorelos,7,6,8,1FH,0,0F0h
+IMP_CAD_COLOR zonaCentro,6,6,33,1FH,0,0F0h 
+IMP_CAD_COLOR zonaSauces,6,6,58,1FH,0,0F0h
+ 
+IMP_CAD_COLOR zonaCantera,7,10,8,1FH,0,0F0h
+IMP_CAD_COLOR zonaLaguna,6,10,33,1FH,0,0F0h 
+IMP_CAD_COLOR zonaZapopan,7,10,58,1FH,0,0F0h 
             
     
 IMP_CAD_COLOR msj1,20,15,1,1FH,0,0F0h 
@@ -449,7 +474,11 @@ IMP_CAD_COLOR msj2,31,15,33,1FH,0,0F0h
 IMP_CAD_COLOR msj3,28,17,1,1FH,0,0F0h
 IMP_CAD_COLOR msj4,28,17,33,1FH,0,0F0h
 IMP_CAD_COLOR msj5,8,19,1,1FH,0,0F0h 
-IMP_CAD_COLOR msjOpc,8,19,33,1FH,0,0F0h                   
+IMP_CAD_COLOR msjOpc,8,19,33,1FH,0,0F0h
+
+
+
+CURSOR 19,40,0                   
         
     
 FIN:
