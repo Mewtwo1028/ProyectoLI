@@ -1,7 +1,8 @@
-;POLLITECH
-;RAMON HERRERA HERRERA
-;JHOLAUS ENRIQUE SALAZAR MALDONADO  
-
+;CLIMATEHACKERS
+;Nombres:
+;Ramón Herrera Herrera
+;ALEXIS MORENO JAUREGUI 
+;Osmar Aldahir Guerra Castillo
 ;********************************************************
 name "printer"
 
@@ -17,21 +18,22 @@ include BIBLIO_MACROS.lib
 name "thermo" 
 
 ;CREAR LOGO
+        vacio db '  '
         R1     DB                    '',186,'                        ',219,219,219,' ',219,' ',' ',' ',219,' ',219,' ',219,' ',219,219,219,' ',219,219,219,' ',219,' ',219,' ',219,219,219,' ',219,223,220,' ',220,219,219,'                 ',186,''
         R2     DB                    '',186,'                        ',219,' ',' ',' ',219,' ',' ',' ',219,' ',219,' ',219,' ',219,' ',219,' ',219,' ',' ',' ',219,' ',219,' ',219,220,220,' ',219,' ',219,' ',219,220,' ','                 ',186,''
         R3     DB                    '',186,'                        ',219,' ',' ',' ',219,' ',' ',' ',219,' ',219,219,219,' ',219,219,219,' ',219,' ',' ',' ',219,219,' ',' ',219,223,223,' ',219,219,220,' ',' ',223,219,'                 ',186,''
         R4     DB                    '',186,'                        ',219,219,219,' ',219,220,220,' ',219,' ',219,' ',219,' ',219,' ',219,' ',219,219,219,' ',219,' ',219,' ',219,219,219,' ',219,' ',219,' ',219,219,223,'                 ',186,''  
         R5     DB                    '',186,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,186,'' 
-        R6     DB                    '',186,'                                                                              ',186,'' 
-        R7     DB                    '',186,' ',219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,'  ',219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,' ',186,''
-        R8     DB                    '',186,' ',219,219,'                              ',219,219,'  ',219,219,'                                       ',186,''
-        R9     DB                    '',186,' ',219,219,'                              ',219,219,'  ',219,219,'                                       ',186,''
-        R10    DB                    '',186,' ',219,219,'                              ',219,219,'  ',219,219,'                                       ',186,''
-        R11    DB                    '',186,' ',219,219,'                              ',219,219,'  ',219,219,'                                       ',186,''
-        R12    DB                    '',186,' ',219,219,'                              ',219,219,'  ',219,219,'                                       ',186,''
-        R13    DB                    '',186,' ',219,219,'                              ',219,219,'  ',219,219,'                                       ',186,''
-        R14    DB                    '',186,' ',219,219,'                              ',219,219,'  ',219,219,'                                       ',186,''
-        R15    DB                    '',186,' ',219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,'  ',219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,' ',186,''
+        R6     DB                    '',186,'                                                                                      ',186,'' 
+        R7     DB                    '',186,' ',219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,' ',186,''
+        R8     DB                    '',186,' ',219,219,'                                  ',219,'                                        ',186,''
+        R9     DB                    '',186,' ',219,219,'                                  ',219,'                                       ',186,''
+        R10    DB                    '',186,' ',219,219,'                                  ',219,'                                       ',186,''
+        R11    DB                    '',186,' ',219,219,'                                  ',219,'                                       ',186,''
+        R12    DB                    '',186,' ',219,219,'                                  ',219,'                                       ',186,''
+        R13    DB                    '',186,' ',219,219,'                                  ',219,'                                       ',186,''
+        R14    DB                    '',186,' ',219,219,'                                  ',219,'                                       ',186,''
+        R15    DB                    '',186,' ',219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,' ',186,''
         R16    DB                    '                                                                                             '
         R17    DB                    219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219
         R18    DB                    '   ',219,219,219,219,219,219,219,219,'  ',220,220,220,220,220,220,220,',             ',220,220,220,220,219,219,219,219,219,219,219,'                ',219,219,219,219,219,219,220,220,'   '
@@ -39,12 +41,12 @@ name "thermo"
         R20    DB                    '   ',219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,' ',220,220,220,' ',219,219,219,219,219,'    ',219,219,219,219,220,220,220,220,220,220,220,220,220,220,220,220,220,'  ',219,219,219,219,219,219,219,219,219,219,219
         R21    DB                    219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,220,220,220,220,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,' ',219,219,219,219,219,219,219,219,219,219,219
         R22    DB                    219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219
-        R23    DB                    219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,'       ',219,219,219,219,219,219,219,219,219
+        R23    DB                    219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219
         R24    DB                    219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219
         R25    DB                    219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219
         R26    DB                    219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,220,220,220,220,220,220,220,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219
         R27    DB                    219,219,219,219,219,219,219,220,220,220,220,220,220,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219
-       
+        op2 db 8       
         BTN    DB 219,219       
         
          ;EMULATIONKIT DOTS PARA MENSAJE: PELIGRO!
@@ -85,14 +87,19 @@ name "thermo"
         msj2   DB '2: Desea limpiar el panel' ;25
         msj3   DB '3: Desea salir del sistema' ;26         
         msj4   DB '4: Desea ver cantidad de an',160,'lisis? ' ;35 
-        msj5   DB '4.1: Leer el reporte de analísis registrados' ;34
+        msj5   DB '5: Ver objetivos' ;34
         msj6   DB '4.0: Volver a inicio' ;20 
         msg2 db 'presione tecla abajo para terminar'
         nombre db 'Nombre del Sitio a Registrar:  ' ;31
         edad   db 'Zona:'
         borrar db '                              ';30       
         pregunta db 'Desea Registrar Nuevo Sitio?';28   
-        
+        p1msj0 db 'Mostrar objetivos  ';mostrar objetivos
+        p1msj1 db 'Instalar sensores  ';registrar zona en el archivo txt
+        p1msj2 db 'Analizar Zona      ';encender termometo y los otros devices
+        p1msj3 db 'Realizar reporte   ';impresora
+        p1msj4 db 'Salir del sistema  ' 
+        ren db 0
         
         nom db ' ',32,?,20 dup(' '),'$'
         auxx db '                                                                                                                '                                                                                        
@@ -121,13 +128,12 @@ name "thermo"
         Bot db '0'   
         Ubi db 10,0,11 dup('$')   
         Limpiar db '                               '    
-        REN    DB 0
 ;*************************************************************************************************
 ;DIRECTORIOS:
-        rutaGen db 'C:\POLLITECH',0
-        rutaDir db 'C:\POLLITECH\POLLITECH8',0
-        rutaRep db 'C:\POLLITECH\POLLITECH8\Registros',0
-        rutaReg db 'C:\POLLITECH\POLLITECH8\Registros\Registro.txt',0
+        rutaGen db 'C:\Clihack',0
+        rutaDir db 'C:\Clihack\Clihack8',0
+        rutaRep db 'C:\Clihack\Clihack8\Registros',0
+        rutaReg db 'C:\Clihack\Clihack8\Registros\Registro.txt',0
         
         manejador dw 0 
         msjNoAbrir db 'No se pudo Abrir el archivo$'
@@ -142,13 +148,25 @@ name "thermo"
         espacio db ' $'
         n db 'Nombre:$';7  
         e db 'Zona:$';5
+        
+        
+        
+ 
 
 
 
 
 
-;******************MACROS***************************
-     LEER_ARCHIVO_IMP MACRO manejador, cuantosLeer, leidos
+;******************MACROS*************************** 
+imp_flecha MACRO 
+    MOV AH,9
+    MOV CX,1
+    MOV AL,1ah
+    MOV BH,0
+    MOV BL,0f0h
+    INT 10H
+ENDM
+    LEER_ARCHIVO_IMP MACRO manejador, cuantosLeer, leidos
         MOV AH,3FH
         MOV BX, manejador
         MOV CX, cuantosLeer
@@ -236,7 +254,36 @@ contRDM db 0
     db  'XXXXklcllcxNMWMMMMMMMMMWNNNXXXXXXXXXXXW0lclccd0XXX',10,13
     db  'XXXOoccclco0MMMMMMMMMMMMMWWNXXXXXXXXXNNxclccclxKXX',10,13  
     
-;
+;   
+    Portmensaje db 'Bienvenido al sistema de alerta temprana $' 
+    Portnivel db 'Los niveles de atenci',162,'n estan en:$'
+    presiona db 'Pulsa un bot',162,'n para iniciar sesi',162,'n$'
+    logo3 db '               ...  **.                                                         '               
+        db  '    .:llllc*   dKc  **.                              *:                         '          
+        db  '  .cOOo**lk0o  xNl      .  ...   ...        ...    .JXL,     ...                '          
+        db  '  ;K0;    .lo  xNl .xk ;kkddxOkoodxkx; .lkkxkkc. *XXXXXX*.lkxxkx;,              '          
+        db  '  lXk.         xNl l0K cKKc oXXl  cKO*  ***   0Xc .dXX.  xXd   kkl              '          
+        db  '  lXk.      .  xNl l0K cK0l ;K0,  ,00,  .ccddxKNl .lXX. ;KNkddx00:              '          
+        db  '   ,00*    *dx xNl l0K cK0l ;KO,  ,00, .xXd  ;0Nl .lXX. ,OXo   ...              '        
+        db  '    ;x0xoldOkl xNl l0K cK0l ;KO,  ,00, .dKkooxKNl  ;KKo,.;OOdlodc.              '       
+        ;db  '    ********  *:.l .,;. .;,.  .;,.  .;,.  .;:::;;:.  .:::.  .;:::;.             '                                      ..                                         
+        db  '  OK:     000.                     ,Okl                                           '       
+        db  'OK:     cXk.    ....      ....   ,0Ol    ..    ...    .. ..    ....             '       
+        db  'OKc.   .lKk. .:xkxkkol  ,dkxxkd* ,0Ol .;xk: .:xkxkkc. o0Vdo,.;xkxxkd            '       
+        db  'OXkollloONk.      kXd. 00c   ldl ;00l:dKO; .lXk   kKl lNd.  *OXo ***            '       
+        db  'OXOollloONk. .:oxdd0Nk oXx.      ,0NNNN0;  *ON0dddO0o kX:    ;dkxdo:.           '       
+        db  'OK:     cKk. oXk  ;xNk cKO*  .;, ,0KolxKk, .xNx   ... kK:        ;xXx.          '       
+        db  'OK:     cKk. cK0old0Nk .o0kookOc ,0O, .c00c.,k0xlldl. kK:   .xoxooooo.          '       
+        db  '00l     000,  ********   ******  ***.   ***. *******  ***   *********           '
+    
+    ;nombreEq db '*-----CLIMATE HACKERS-----*'
+    rallita db '***************************' 
+    msjObjetivos db 'OBJETIVOS'
+    obj1 db '*Prever el no circula'
+    obj2 db '*Medici',162,'n de calidad del aire en una zona en espec',161,'fico en tiempo real'
+    obj3 db '*Medir el promedio de calidad del aire en la ciudad'
+    obj4 db '*Indicar qué días es mejor tener clases en línea'
+    obj5 db '*Alerta temprana de incendios forestales'
 
 .code
 inicio:
@@ -259,8 +306,17 @@ inicio:
             mov al,2 ;habilitar lectura y escritura
             int 21h        
            ;Manejador
-           mov manejador,ax 
-;==========================PRIMER PANTALLA========================================
+           mov manejador,ax          
+           
+;==========================SEGUNDA PANTALLA========================================
+          
+    CADENA_COLOR logo3,1280,0,0,0,0,2fh
+    CADENA_COLOR portmensaje,40,20,17,0,0,08h    
+    CADENA_COLOR presiona,34,23,21,0,0,0f0h
+    mov ah,0
+    int 16h
+    cadena_color vacio,2000,0,0,0,0,00h
+;==========================SEGUNDA PANTALLA========================================
 ;********Logo*********          
     MOV AH,19
             LEA BP,LOGO
@@ -456,122 +512,87 @@ pintar_fondo:
             CADENA_COLOR btn,80,20,0,0,0,0h
             CADENA_COLOR btn,80,21,0,0,0,0h
            
-;SIMBOLOS ROJOS            
-    CURSOR 6,38,0    
-    MOV AH,9       
-    MOV CX,40    
-    MOV AL,s4 
-    MOV BL,0CH    
-    MOV BH,0        
-    INT 10H  
-    
-    CURSOR 7,38,0    
-    MOV AH,9       
-    MOV CX,1    
-    MOV AL,s4 
-    MOV BL,0CH    
-    MOV BH,0        
-    INT 10H     
-    CURSOR 8,38,0    
-    MOV AH,9       
-    MOV CX,1    
-    MOV AL,s4 
-    MOV BL,0CH    
-    MOV BH,0        
-    INT 10H
-    CURSOR 9,38,0    
-    MOV AH,9       
-    MOV CX,1    
-    MOV AL,s4 
-    MOV BL,0CH    
-    MOV BH,0        
-    INT 10H
-    CURSOR 10,38,0    
-    MOV AH,9       
-    MOV CX,1    
-    MOV AL,s4 
-    MOV BL,0CH    
-    MOV BH,0        
-    INT 10H 
-    CURSOR 11,38,0    
-    MOV AH,9       
-    MOV CX,1    
-    MOV AL,s4 
-    MOV BL,0CH    
-    MOV BH,0        
-    INT 10H
-    CURSOR 12,38,0    
-    MOV AH,9       
-    MOV CX,1    
-    MOV AL,s4 
-    MOV BL,0CH    
-    MOV BH,0        
-    INT 10H
-    CURSOR 13,38,0    
-    MOV AH,9       
-    MOV CX,1    
-    MOV AL,s4 
-    MOV BL,0CH    
-    MOV BH,0        
-    INT 10H
-    CURSOR 14,38,0    
-    MOV AH,9       
-    MOV CX,1    
-    MOV AL,s4 
-    MOV BL,0CH    
-    MOV BH,0        
-    INT 10H 
-    CURSOR 14,43,0    
-    MOV AH,9       
-    MOV CX,35    
-    MOV AL,s4 
-    MOV BL,0CH    
-    MOV BH,0        
-    INT 10H
+
             
                          
 ;Imprimir mensaje pantalla izquierda
             CADENA_COLOR msjNon,29,8,4,0,0,0F0h   
 ;Imprimir mensajes pantalla derecha  
             ;0
-            CADENA_COLOR msj0,27,8,40,0,0,0F0h 
+            CADENA_COLOR p1msj0,19,8,41,0,0,0f0h 
             ;1
-            CADENA_COLOR msj1,30,9,40,0,0,0F0h
+            CADENA_COLOR p1msj1,19,9,41,0,0,0f0h
             ;2
-            CADENA_COLOR msj2,25,10,40,0,0,0F0h
+            CADENA_COLOR p1msj2,19,10,41,0,0,0F0h
             ;3
-            CADENA_COLOR msj3,26,11,40,0,0,0F0h 
+            CADENA_COLOR p1msj3,19,11,41,0,0,0F0h 
             ;4
-            CADENA_COLOR msj4,35,12,40,0,0,0F0h   
+            CADENA_COLOR p1msj4,19,12,41,0,0,0F0h   
             ;Numerar botones
             ;0
             CADENA_COLOR S0,0,8,40,23,10,70H
             mov Bot,0
             ;Mensaje solicitar opcion 
-            CURSOR 14,40,0
-                CADENA_SIN_COLOR msjOp
+ 
+                
+            cursor op2,40,0   
+            imp_flecha 
                     
            
                      
 ;************************************************************
-solicitudDatos:                
-            ;Solicitar boton para presionar
-            CURSOR 14,41,0
-                ;Esperar entrada
-                Leer_Char 
-            ;Checar valor entrada
-            mov Op,al ;Char a var
-            ;Comparativa
-            cmp Op,'0'
-            je boton0 
-            cmp Op,'1'
+solicitudDatos:
+    tecla
+    mov op,ah
+;************************************************************
+    CMP op,50H
+    JE ABAJO
+    CMP op,48H
+    JE ARRIBA
+    CMP op,1cH
+    JE opcion_elegida
+    jmp solicitudDatos
+abajo:
+    inc op2
+    cmp op2,12
+    jg primer_op
+    imp_car_color 219,1,0,0fh
+    cursor op2,40,0
+    imp_flecha
+    jmp solicitudDatos
+arriba:
+    dec op2
+    cmp op2,8
+    jl ultima_op
+    imp_car_color 219,1,0,0fh
+    cursor op2,40,0
+    imp_flecha
+    jmp solicitudDatos
+ultima_op:
+    imp_car_color 219,1,0,0fh
+    mov op,12
+    mov op2,12 
+    cursor op2,40,0
+    imp_flecha
+    jmp solicitudDatos 
+primer_op:
+    imp_car_color 219,1,0,0fh
+    mov op,8
+    mov op2,8 
+    cursor op2,40,0
+    imp_flecha
+    jmp solicitudDatos 
+opcion_elegida:
+            cmp op2,8
+            je objetivos 
+            cmp op2,9
+            je boton0
+            cmp op2,10
             je termo
-            cmp Op,'2'
-            je boton2
-            cmp Op,'3'
-            je fin
-            cmp Op,'4'
-            je boton4            
+            cmp op2,11
+            je boton4
+            cmp op2,12
+            je fin        
             jmp solicitudDatos
 
 ;************************************************************
@@ -812,7 +833,23 @@ siguiente3:
 	CMP BX,40           ;   Si columnas totales < 40
 	JL principal3	    ;       Reinicia principal 
     JMP solicitudDatos
-        
+objetivos:
+        cadena_color vacio,2000,0,0,0,0,00h
+         CADENA_COLOR  rallita,27,2,25,0,0,0eh
+         CADENA_COLOR  nombreEq,27,4,25,0,0,2fh 
+         tecla 
+         CADENA_COLOR msjObjetivos,9,6,33,0,0,1fh  
+         CADENA_COLOR obj1,21,10,10,0,0,09h 
+         tecla
+         CADENA_COLOR obj2,70,11,10,0,0,0ah
+         tecla 
+         CADENA_COLOR obj3,51,14,10,0,0,0bh 
+         tecla
+         CADENA_COLOR obj4,48,16,10,0,0,0ch 
+         tecla
+         CADENA_COLOR obj5,40,18,10,0,0,0dh
+         tecla
+         jmp pintar_fondo        
 ;pintarzonas:      
  ;   CADENA_COLOR MSJZONA,16,15,40,0,0,0Fh
  ;   Caracter_color
