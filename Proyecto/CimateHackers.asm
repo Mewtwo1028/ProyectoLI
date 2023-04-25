@@ -17,10 +17,10 @@ include BIBLIO_MACROS.lib
 name "thermo" 
 
 ;CREAR LOGO
-        R1     DB                    '',186,'                        ',219,219,219,' ',219,219,219,' ',219,' ',' ',' ',219,' ',' ',' ',219,219,219,' ',219,219,219,' ',219,219,219,' ',219,219,219,' ',219,' ',219,'                   ',186,''
-        R2     DB                    '',186,'                        ',219,220,219,' ',219,' ',219,' ',219,' ',' ',' ',219,' ',' ',' ',' ',219,' ',' ',' ',219,' ',' ',220,220,220,' ',219,' ',' ',' ',219,220,219,'                   ',186,''
-        R3     DB                    '',186,'                        ',219,223,223,' ',219,' ',219,' ',219,' ',' ',' ',219,' ',' ',' ',' ',219,' ',' ',' ',219,' ',' ',223,223,223,' ',219,' ',' ',' ',219,223,219,'                   ',186,''
-        R4     DB                    '',186,'                        ',219,' ',' ',' ',219,219,219,' ',219,220,220,' ',219,220,220,' ',219,219,219,' ',' ',219,' ',' ',219,219,219,' ',219,219,219,' ',219,' ',219,'                   ',186,''  
+        R1     DB                    '',186,'                        ',219,219,219,' ',219,' ',' ',' ',219,' ',219,' ',219,' ',219,219,219,' ',219,219,219,' ',219,' ',219,' ',219,219,219,' ',219,223,220,' ',220,219,219,'                 ',186,''
+        R2     DB                    '',186,'                        ',219,' ',' ',' ',219,' ',' ',' ',219,' ',219,' ',219,' ',219,' ',219,' ',219,' ',' ',' ',219,' ',219,' ',219,220,220,' ',219,' ',219,' ',219,220,' ','                 ',186,''
+        R3     DB                    '',186,'                        ',219,' ',' ',' ',219,' ',' ',' ',219,' ',219,219,219,' ',219,219,219,' ',219,' ',' ',' ',219,219,' ',' ',219,223,223,' ',219,219,220,' ',' ',223,219,'                 ',186,''
+        R4     DB                    '',186,'                        ',219,219,219,' ',219,220,220,' ',219,' ',219,' ',219,' ',219,' ',219,' ',219,219,219,' ',219,' ',219,' ',219,219,219,' ',219,' ',219,' ',219,219,223,'                 ',186,''  
         R5     DB                    '',186,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,186,'' 
         R6     DB                    '',186,'                                                                              ',186,'' 
         R7     DB                    '',186,' ',219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,'  ',219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,219,' ',186,''
@@ -110,7 +110,7 @@ name "thermo"
         msg_end db 0
 
 ;PONER EN EL RECUADRO MIENTRAS NO SE RECIBA NINGUNA ALERTA
-        msjNon DB 'SISTEMA POLLITECH BIENVENIDO!';26 
+        msjNon DB 'Clihackers change the world!!';26 
 ;Variables opcion 
         S0 db '0'
         S1 db '1'
@@ -200,29 +200,42 @@ IMP_CADENA ENDM
 CAR_COLOR ENDM 
 ;***************FIN MACROS**************************      
 
-;PINTAR ZONAS
-    MSJZONA DB 'LISTADO DE ZONAS$';16
-    MSJZONA1 DB 'ZONA-01$';7
-    MSJZONA2 DB 'ZONA-02$'
-    MSJZONA3 DB 'ZONA-03$'
-    MSJZONA4 DB 'ZONA-04$'
-    MSJZONA5 DB 'ZONA-05$'
-    MSJZONA6 DB 'ZONA-06$'
-    MSJZONA7 DB 'ZONA-07$'
-    MSJZONA8 DB 'ZONA-08$'   
-    Teclillas DB 024,025,026,027,'$' 
-    BorrarZonita db '       $'   
-    CONTADORZONA DB 0 
-    Zonax db 18
-    Zonay db 7     
-    Zonax2 db 0
-    Zonay2 db 0
+;***********LOGIN****************
 ;------------------------------    
 ;RANDOM
 RDM dw ?, 0ah, 0dh, '$'    
 RDM2 DB 0
 contRDM db 0
-
+    s5          db  176,'$'
+    s4          db  184,'$'
+    usuario     db  'Usuario: '
+    contraseña     db  'Contraseña: '
+    usu db 10,0,10 dup('$') 
+    con db 10,0,10 dup('$') 
+    nombreEq    db '*-----CLIMATE HACKERS-----*'
+    logo db 'XXXXXXXXXXXXXXXXXXXXKOxdooodk0XXXXXXXXXXXXXXXXXXXX',10,13
+    db  'XXXXXXXXXXXXXXXXXX0kdlccccccloxOKXXXXXXXXXXXXXXXXX',10,13
+    db  'XXXXXXXXXXXXXXXX0xolcclcccccclcldOKXXXXXXXXXXXXXXX',10,13
+    db  'XXXXXXXXXXXXXXKkocccccccccccccccclx0XXXXXXXXXXXXXX',10,13
+    db  'XXXXXXXXXXXXXKxlccclccccccclcccccccoOXXXXXXXXXXXXX',10,13
+    db  'XXXXXXXXXXXXKxlcccccccccccccccccccccoOXXXXXXXXXXXX',10,13
+    db  'XXXXXXXXXXXKxlccccc:::::::::::::ccclco0XXXXXXXXXXX',10,13
+    db  'XXXXXXXXXXXOlcc;,''''........''''.,:ccxKXXXXXXXXXX',10,13
+    db  'XXXXXXXXXXKxc:,....................;;co0XXXXXXXXXX',10,13
+    db  'XXXXXXXXXXXkl:;.....................,co0XXXXXXXXXX',10,13
+    db  'XXXXXXXXXXX0dc,;...................;:lkXXXXXXXXXXX',10,13
+    db  'XXXXXXXXXXXX0dc;;................;,:lkKXXXXXXXXXXX',10,13
+    db  'XXXXXXXXXXXXXKxl:;;............;,:cdOXXXXXXXXXXXXX',10,13
+    db  'XXXXXXXXXXXXX0xlccc;,;.......;;:cccoOKXXXXXXXXXXXX',10,13
+    db  'XXXXXXXXXXX0xlcclcclc:,....;;cclccccldOKXXXXXXXXXX',10,13
+    db  'XXXXXXXXXKkoccccccccccc;,;,:ccccccccccld0XXXXXXXXX',10,13
+    db  'XXXXXXXX0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxkKXXXXXXX',10,13
+    db  'XXXXXXKOokNMWWWWWMMWNNNNNNNNNNNNNNNNNNNWKodKXXXXXX',10,13
+    db  'XXXXXKklcxNWWWWMMMMWNXXXXXXXXXXXXXXXXXNW0lcd0XXXXX',10,13
+    db  'XXXXKklcco0WMWMMMMMMMWNXXXXXXXXXXXXXXXNNxclcd0XXXX',10,13
+    db  'XXXXklcllcxNMWMMMMMMMMMWNNNXXXXXXXXXXXW0lclccd0XXX',10,13
+    db  'XXXOoccclco0MMMMMMMMMMMMMWWNXXXXXXXXXNNxclccclxKXX',10,13  
+    
 ;
 
 .code
@@ -247,7 +260,154 @@ inicio:
             int 21h        
            ;Manejador
            mov manejador,ax 
+;==========================PRIMER PANTALLA========================================
+;********Logo*********          
+    MOV AH,19
+            LEA BP,LOGO
+            MOV CX,1150 ;LONGITUD
+            MOV DH,1 ;RENGLON
+            MOV DL,0 ;COLUMNA
+            MOV BH,0 ;PAGINA
+            MOV AL,0 ;MODO CERO
+            MOV BL,01H ;COLOR
+        INT 10H 
+        
+;*************SIMBOLO**************
 
+    CURSOR 0,0,0    
+    MOV AH,9       
+    MOV CX,80    
+    MOV AL,s5 
+    MOV BL,0FH    
+    MOV BH,0        
+    INT 10H 
+    
+;************SIMBOLO***************
+    CURSOR 23,0,0
+    
+    MOV AH,9       
+    MOV CX,80    
+    MOV AL,s5 
+    MOV BL,0FH    
+    MOV BH,0        
+    INT 10H 
+    
+    CURSOR 24,0,0
+    
+    MOV AH,9       
+    MOV CX,80    
+    MOV AL,s5 
+    MOV BL,0FH    
+    MOV BH,0        
+    INT 10H     
+    
+;------------s2------------ 
+
+simb2:
+
+    CURSOR 2,52,0
+    
+    MOV AH,9       
+    MOV CX,26    
+    MOV AL,s4 
+    MOV BL,0FH    
+    MOV BH,0        
+    INT 10H 
+    
+    CURSOR 3,52,0
+    
+    MOV AH,9       
+    MOV CX,26    
+    MOV AL,s4 
+    MOV BL,0FH    
+    MOV BH,0        
+    INT 10H
+
+    CURSOR 4,52,0
+    
+    MOV AH,9       
+    MOV CX,26    
+    MOV AL,s4 
+    MOV BL,0FH    
+    MOV BH,0        
+    INT 10H 
+    
+    CURSOR 5,52,0
+    
+    MOV AH,9       
+    MOV CX,26    
+    MOV AL,s4 
+    MOV BL,0FH    
+    MOV BH,0        
+    INT 10H
+    
+    CURSOR 6,52,0
+    
+    MOV AH,9       
+    MOV CX,26    
+    MOV AL,s4 
+    MOV BL,0FH    
+    MOV BH,0        
+    INT 10H
+        
+        
+;***************************
+    MOV AH,19
+            LEA BP,nombreEq
+            MOV CX,27 ;LONGITUD
+            MOV DH,10 ;RENGLON
+            MOV DL,52 ;COLUMNA
+            MOV BH,0 ;PAGINA
+            MOV AL,0 ;MODO CERO
+            MOV BL,0EH ;COLOR
+        INT 10H 
+        
+        
+;******USU Y CONTR*******
+        MOV AH,19
+            LEA BP,usuario
+            MOV CX,9 ;LONGITUD
+            MOV DH,15 ;RENGLON
+            MOV DL,52 ;COLUMNA
+            MOV BH,0 ;PAGINA
+            MOV AL,0 ;MODO CERO
+            MOV BL,0EH ;COLOR
+        INT 10H
+        
+        MOV AH,19
+            LEA BP,contraseña
+            MOV CX,12 ;LONGITUD
+            MOV DH,18 ;RENGLON
+            MOV DL,52 ;COLUMNA
+            MOV BH,0 ;PAGINA
+            MOV AL,0 ;MODO CERO
+            MOV BL,0EH ;COLOR
+        INT 10H
+        
+;----------ENTRADA USUARIO
+    MOV  AH,2
+    MOV DH,16
+    MOV DL,52
+    MOV BH,0 
+    INT 10H
+    
+        MOV AH,10
+        LEA DX,usu
+        INT 21H
+         
+        
+;----------ENTRADA CONTRASEÑA
+    MOV AH,2
+    MOV DH,19
+    MOV DL,52
+    MOV BH,0 
+    INT 10H
+    
+        MOV AH,10
+        LEA DX,con
+        INT 21H                                                                                
+                                                                                 
+;=================================================================================
 
 pintar_fondo:
             MOV REN,0  
@@ -294,7 +454,82 @@ pintar_fondo:
             CADENA_COLOR btn,80,18,0,0,0,0h
             CADENA_COLOR btn,80,19,0,0,0,0h
             CADENA_COLOR btn,80,20,0,0,0,0h
-            CADENA_COLOR btn,80,21,0,0,0,0h             
+            CADENA_COLOR btn,80,21,0,0,0,0h
+           
+;SIMBOLOS ROJOS            
+    CURSOR 6,38,0    
+    MOV AH,9       
+    MOV CX,40    
+    MOV AL,s4 
+    MOV BL,0CH    
+    MOV BH,0        
+    INT 10H  
+    
+    CURSOR 7,38,0    
+    MOV AH,9       
+    MOV CX,1    
+    MOV AL,s4 
+    MOV BL,0CH    
+    MOV BH,0        
+    INT 10H     
+    CURSOR 8,38,0    
+    MOV AH,9       
+    MOV CX,1    
+    MOV AL,s4 
+    MOV BL,0CH    
+    MOV BH,0        
+    INT 10H
+    CURSOR 9,38,0    
+    MOV AH,9       
+    MOV CX,1    
+    MOV AL,s4 
+    MOV BL,0CH    
+    MOV BH,0        
+    INT 10H
+    CURSOR 10,38,0    
+    MOV AH,9       
+    MOV CX,1    
+    MOV AL,s4 
+    MOV BL,0CH    
+    MOV BH,0        
+    INT 10H 
+    CURSOR 11,38,0    
+    MOV AH,9       
+    MOV CX,1    
+    MOV AL,s4 
+    MOV BL,0CH    
+    MOV BH,0        
+    INT 10H
+    CURSOR 12,38,0    
+    MOV AH,9       
+    MOV CX,1    
+    MOV AL,s4 
+    MOV BL,0CH    
+    MOV BH,0        
+    INT 10H
+    CURSOR 13,38,0    
+    MOV AH,9       
+    MOV CX,1    
+    MOV AL,s4 
+    MOV BL,0CH    
+    MOV BH,0        
+    INT 10H
+    CURSOR 14,38,0    
+    MOV AH,9       
+    MOV CX,1    
+    MOV AL,s4 
+    MOV BL,0CH    
+    MOV BH,0        
+    INT 10H 
+    CURSOR 14,43,0    
+    MOV AH,9       
+    MOV CX,35    
+    MOV AL,s4 
+    MOV BL,0CH    
+    MOV BH,0        
+    INT 10H
+            
+                         
 ;Imprimir mensaje pantalla izquierda
             CADENA_COLOR msjNon,29,8,4,0,0,0F0h   
 ;Imprimir mensajes pantalla derecha  
@@ -315,16 +550,7 @@ pintar_fondo:
             ;Mensaje solicitar opcion 
             CURSOR 14,40,0
                 CADENA_SIN_COLOR msjOp
-                   
-            CADENA_COLOR MSJZONA1,7,16,5,0,0,0Fh
-            CADENA_COLOR MSJZONA2,7,16,25,0,0,0Fh
-            CADENA_COLOR MSJZONA3,7,16,45,0,0,0Fh
-            CADENA_COLOR MSJZONA4,7,16,65,0,0,0Fh
-            CADENA_COLOR MSJZONA5,7,20,5,0,0,0Fh
-            CADENA_COLOR MSJZONA6,7,20,25,0,0,0Fh
-            CADENA_COLOR MSJZONA7,7,20,45,0,0,0Fh
-            CADENA_COLOR MSJZONA8,7,20,65,0,0,0Fh    
-            CADENA_COLOR TECLILLAS,4,24,0,0,0,0FH  
+                    
            
                      
 ;************************************************************
@@ -380,53 +606,6 @@ CURSOR 11,4,0
        GUARDAR_ARCHIVO manejador, 1,saltoLinea     
        
        
-       ;ELEGIR ZONA
-ESPERARFLECHA:  ;18  ;7
-       CURSOR Zonax,Zonay,0 
-            MOV AH,0
-            INT 16H
-                CMP AH,48H
-                JE ARRIBA1
-                CMP AH,50H
-                JE ABAJO1
-                CMP AH,4BH
-                JE IZQUIERDA1
-                CMP AH,4DH
-                JE DERECHA1 
-                    CMP AL,13 ;<ENTER>
-                JE pintZona
-                CMP AH,01H ; FINALIZAR 
-                JE fin
-                JMP ESPERARFLECHA
-
-ARRIBA1:
-SUB Zonax,4
-JMP ESPERARFLECHA
-ABAJO1:  
-ADD Zonax,4
-JMP ESPERARFLECHA
-DERECHA1:
-ADD Zonay,20
-JMP ESPERARFLECHA
-IZQUIERDA1:      
-SUB Zonay,20
-JMP ESPERARFLECHA        
-       
-PintZona:  
-    MOV AL,Zonax     
-    MOV Zonax2,AL
-    SUB Zonax2,2  
-    MOV AL,Zonay
-    MOV Zonay2,AL
-    SUB Zonay2,2
-    
-    CADENA_COLOR BorrarZonita,7,Zonax2,Zonay2,0,0,0FH
-    CADENA_COLOR ed+2,7,Zonax2,Zonay2,0,0,0FH
-    CURSOR Zonax,Zonay,0
-    CARACTER_COLOR 03H,1,0FH,0   
-    JMP Seguir
-
-       
 Seguir:               
 CADENA_COLOR pregunta,28,12,4,0,0,70h 
 ;CADENA_COLOR a,10,13,4,0,0,70h  
@@ -457,7 +636,7 @@ CURSOR 13,10,0
             CADENA_COLOR borrar,30,13,4,0,0,70h
             je Boton0
 boton2: 
-jmp inicio 
+jmp pintar_fondo 
 
 ;---------------------------
  boton4:    
@@ -493,10 +672,10 @@ jmp inicio
 ret
        
 call limpiarRegistros
-JMP fin        
+jmp solicitudDatos        
 
 termo:
-call TeclasFlechas
+
 numRDM:
 Mov ah,2Ch
 Int 21h
@@ -663,38 +842,8 @@ RASTREO proc   ;----------------------------------4
         MOV AH,0
         INT 16H
 RASTREO ENDp 
-TeclasFlechas proc ;----------------------------------5
-    ESPERARFLECHA2:  ;18  ;7
-           CURSOR Zonax,Zonay,0 
-                MOV AH,0
-                INT 16H
-                    CMP AH,48H
-                    JE ARRIBA2
-                    CMP AH,50H
-                    JE ABAJO2
-                    CMP AH,4BH
-                    JE IZQUIERDA2
-                    CMP AH,4DH
-                    JE DERECHA2 
-                        CMP AL,13 ;<ENTER>
-                    JE  numRDM
-                    CMP AH,01H ; FINALIZAR 
-                    JE fin
-                    JMP ESPERARFLECHA2
-    
-    ARRIBA2:
-    SUB Zonax,4
-    JMP ESPERARFLECHA2
-    ABAJO2:  
-    ADD Zonax,4
-    JMP ESPERARFLECHA2
-    DERECHA2:
-    ADD Zonay,20
-    JMP ESPERARFLECHA2
-    IZQUIERDA2:      
-    SUB Zonay,20
-    JMP ESPERARFLECHA2
-TeclasFlechas endp  
+
+     
 
 ok2 proc    ;----------------------------------6 
     jmp boton1
