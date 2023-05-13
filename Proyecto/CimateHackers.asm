@@ -556,9 +556,129 @@ IMP_CAD_COLOR zonaSauces,6,19,58,1FH,0,0F0h
 IMP_CAD_COLOR zonaCantera,7,21,8,1FH,0,0F0h
 IMP_CAD_COLOR zonaLaguna,6,21,33,1FH,0,0F0h 
 IMP_CAD_COLOR zonaZapopan,7,21,58,1FH,0,0F0h           
+MOV CX,0
+;************************************************************
+;MOSTRAR LA HORA DEL SISTEMA 
+cursor 0,3,0   
+ 
+mov ah, 2ch           ;Get time
+int 21h
+
+mov dl, ch            ;Hora
+call itoa99
+
+mov ah, 02h           ;:
+mov dl, ':'
+int 21h
+
+
+
+;dl = number to display (0..99)
+itoa99:
+  
+
+ push bx
+ push ax            ;Save registers used
+
+ xor ax, ax         ;AX = 0
+ mov al, dl         ;AX = DL
+
+ mov bl, 10d
+ div bl             ;AL = AX/10, AH = AX mod 10
+
+ ;AX contains the digits
+
+ add ax, 3030h      ;Transform digit to digitals
+
+ ;ASCII digits starts at 30h, digit X is the char 30h+X
+
+ ;ASCII value: 30h  31h  32h  33h ... 39h
+ ;Character:   0    1    2    3   ... 9
+
+
+
+ mov bx, ax         ;Save for later 
+
+ ;Muestra la hora
+
+ 
+ mov dl, bl
+ mov ah, 02h
+ int 21h  
+ 
+ mov dl, bh
+ int 21h
+
+ pop ax
+ pop bx    
+ mov ah, 2ch           ;Get time
+int 21h
+mov dl, ch            ;Show hours
+;MOV hora[0],ch
+
+
+mov ah, 02h           ;Show separator
+mov dl, ':' 
+;MOV hora[1],':'
+int 21h
+ 
+mov dl, cl            ;Show minutes 
+;MOV hora[2],cl
+    
+
+;mov hora[0], dl ; guarda la hora en la primera posición de "hora"
+
+xor ax, ax         ;AX = 0
+ mov al, dl         ;AX = DL
+
+ mov bl, 10d
+ div bl             ;AL = AX/10, AH = AX mod 10
+
+ ;AX contains the digits
+
+ add ax, 3030h      ;Transform digit to digitals
+
+ ;ASCII digits starts at 30h, digit X is the char 30h+X
+
+ ;ASCII value: 30h  31h  32h  33h ... 39h
+ ;Character:   0    1    2    3    ... 9
+  
+
+ mov bx, ax         ;Save for later 
+
+ ;Muestra la hora
+ mov dl, bl 
+
+ mov ah, 02h
+ int 21h
+ 
+ 
+ mov dl, bh
+ int 21h
+
+   
+ pop ax
+ pop bx  
+
+
+
+;dl = number to display (0..99)
+
+
+ push bx
+ push ax            ;Save registers used
+
+ 
+ 
+
+ 
+;************************************************************
+            
                      
 ;************************************************************
 solicitudDatos:
+  cursor op2,40,0   
+  imp_flecha
     tecla
     mov op,ah
 ;************************************************************
@@ -865,11 +985,11 @@ objetivos:
          tecla
          CADENA_COLOR obj2,70,11,10,0,0,0ah
          tecla 
-         CADENA_COLOR obj3,51,14,10,0,0,0bh 
+         CADENA_COLOR obj3,51,12,10,0,0,0bh 
          tecla
-         CADENA_COLOR obj4,48,16,10,0,0,0ch 
+         CADENA_COLOR obj4,48,13,10,0,0,0ch 
          tecla
-         CADENA_COLOR obj5,40,18,10,0,0,0dh
+         CADENA_COLOR obj5,40,14,10,0,0,0dh
          tecla
          jmp pintar_fondo        
 ;pintarzonas:      
