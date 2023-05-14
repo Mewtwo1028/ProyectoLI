@@ -5,7 +5,7 @@
 ;Osmar Aldahir Guerra Castillo
 ;********************************************************
 name "printer"
-
+ 
 
 org 100h
 include BIBLIO_MACROS.lib
@@ -734,6 +734,9 @@ opcion_elegida:
 
 ;************************************************************
 
+
+
+
 boton0: 
 
 
@@ -868,7 +871,44 @@ JMP boton1
 SUMA2:
 ADD RDM2,50
 JMP boton1  
-    
+
+start:
+in al, 125
+
+cmp al, 60
+jl  low   
+
+cmp al, 70
+jl  medium
+
+cmp al, 80
+;jl  ok
+je high
+
+cmp al, 119
+jl ok
+jle  finT
+
+
+;---------------
+
+CADENA_COLOR normal,11,0,0,0,0,0AfH 
+call ok2
+jmp ok
+
+
+;---------------
+ ; turn heater "on".
+
+CADENA_COLOR contmed,11,0,0,0,0,60H
+call ok2
+jmp ok
+
+
+  
+finT:
+call apagar   ; turn heater "off". 
+jmp ok   
 boton1:
 in al, 125
 cmp al, 50
@@ -882,15 +922,27 @@ jg   high
 low:
 mov al, 1
 out 127, al   ; turn heater "on". 
-CADENA_COLOR normal,11,0,0,0,0,0AfH 
+CADENA_COLOR normal,11,0,0,0,0,0AfH
+MOV DX, 2070h
+	MOV AL, 20h 
+	OUT DX, AL
+	ROR Al, 1 
 call ok2
 
 medium:
-CADENA_COLOR contmed,11,0,0,0,0,60H
+CADENA_COLOR contmed,11,0,0,0,0,60H 
+ MOV DX, 2070h
+	MOV AL, 30h 
+	OUT DX, AL
+	ROR Al, 1
 call ok2
 
 high:
-call apagar   ; turn heater "off". 
+call apagar   ; turn heater "off".  
+MOV DX, 2070h
+	MOV AL, 01h 
+	OUT DX, AL
+	ROR Al, 1
 
 
 alertaa1:    
